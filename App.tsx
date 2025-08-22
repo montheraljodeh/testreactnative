@@ -1,22 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { ThemeProvider } from './src/context/ThemeContext';
+import { LanguageProvider } from './src/context/LanguageContext';
+import { AddCarToGarage } from './src/screens/AddCarToGarage';
 
-export default function App() {
+const App: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBawqr style="xauto" />
-    </View>
+    <ThemeProvider>
+      <LanguageProvider>
+        <SafeAreaView style={styles.container}>
+          <StatusBar barStyle="dark-content" backgroundColor="#f5f5f5" />
+          <AddCarToGarage />
+        </SafeAreaView>
+      </LanguageProvider>
+    </ThemeProvider>
   );
-}<View>dsdnadasd
-dsad
-asn</View>
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundCaanoxsadnosaidnoiasdnoisadnoiandoisandoiasnodiolor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#f5f5f5',
   },
 });
+
+export default App;
